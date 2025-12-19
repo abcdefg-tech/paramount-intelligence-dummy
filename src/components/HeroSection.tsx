@@ -1,40 +1,23 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import heroBg from '@/assets/hero-bg.jpg';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-navy-dark to-black">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-navy-light/20 rounded-full blur-3xl animate-pulse-glow" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/20 rounded-full blur-3xl animate-pulse-glow animation-delay-500" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px]">
-          {/* Grid Pattern */}
-          <div className="absolute inset-0 opacity-10">
-            {[...Array(20)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute h-px w-full bg-gradient-to-r from-transparent via-primary-foreground to-transparent"
-                style={{ top: `${i * 5}%` }}
-              />
-            ))}
-            {[...Array(20)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute w-px h-full bg-gradient-to-b from-transparent via-primary-foreground to-transparent"
-                style={{ left: `${i * 5}%` }}
-              />
-            ))}
-          </div>
-        </div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src={heroBg} 
+          alt="AI Neural Network" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/70 via-primary/50 to-primary/80" />
       </div>
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-primary/50" />
-
       {/* Content */}
-      <div className="relative z-10 container-wide text-center px-4">
+      <div className="relative z-10 container-wide text-center px-4 pt-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -85,7 +68,6 @@ const HeroSection = () => {
           </motion.div>
         </motion.div>
       </div>
-
     </section>
   );
 };
