@@ -2,52 +2,70 @@ import { motion } from 'framer-motion';
 import Layout from '@/components/Layout';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import caseTelecom from '@/assets/case-telecom.jpg';
+import caseRealestate from '@/assets/case-realestate.jpg';
+import caseData from '@/assets/case-data.jpg';
+import caseCollaboration from '@/assets/case-collaboration.jpg';
+import caseVoiceai from '@/assets/case-voiceai.jpg';
+import caseEmail from '@/assets/case-email.jpg';
+import caseEcommerce from '@/assets/case-ecommerce.jpg';
+import caseHardware from '@/assets/case-hardware.jpg';
+import caseHealthcare from '@/assets/case-healthcare.jpg';
 
 const caseStudies = [
   {
     title: 'Intelligent automation with actionable AI Agents for the US telecommunication company',
     category: 'Telecommunications',
     slug: 'intelligent-automation-us-telecom',
+    image: caseTelecom,
   },
   {
     title: 'Advanced RAG Engineering for real estate due diligence AI Agent',
     category: 'Real Estate',
     slug: 'advanced-rag-real-estate',
+    image: caseRealestate,
   },
   {
     title: 'Automated data scraping platform powered by AI and LLMs',
     category: 'Data & Analytics',
     slug: 'automated-data-scraping',
+    image: caseData,
   },
   {
     title: 'Collaborative Conversational AI assistant with automation',
     category: 'Collaboration',
     slug: 'collaborative-ai-assistant',
+    image: caseCollaboration,
   },
   {
     title: 'LLM-powered voice assistant for call-center',
     category: 'Customer Service',
     slug: 'llm-voice-assistant-call-center',
+    image: caseVoiceai,
   },
   {
     title: 'RAG: Automation e-mail response with AI and LLMs',
     category: 'Automation',
     slug: 'rag-email-automation',
+    image: caseEmail,
   },
   {
     title: 'AI agent for order recommendation and completion',
     category: 'E-commerce',
     slug: 'ai-order-recommendation',
+    image: caseEcommerce,
   },
   {
     title: 'Swapping Iron; making AI code designed from Nvidia run on Intel Gaudi',
     category: 'Hardware Migration',
     slug: 'nvidia-to-intel-migration',
+    image: caseHardware,
   },
   {
     title: 'Multi-channel AI Agent for personalized appointments in Healthcare',
     category: 'Healthcare',
     slug: 'multi-channel-healthcare-agent',
+    image: caseHealthcare,
   },
 ];
 
@@ -88,10 +106,12 @@ const CaseStudies = () => {
                   className="group block bg-secondary rounded-xl overflow-hidden h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
                 >
                   {/* Image Area */}
-                  <div className="aspect-video bg-gradient-to-br from-primary/10 to-accent/20 flex items-center justify-center">
-                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                      <div className="w-8 h-8 bg-primary/20 rounded-full" />
-                    </div>
+                  <div className="aspect-video overflow-hidden">
+                    <img 
+                      src={study.image} 
+                      alt={study.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
                   </div>
                   
                   {/* Content */}
